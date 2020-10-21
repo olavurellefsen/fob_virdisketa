@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Dropzone from './components/Dropzone';
 import Footer from './components/Footer';
 
-const GAME_DURATION = 1000 * 60 * 10; // 10 minutes
+const GAME_DURATION = 1000 * 60 * 2; // 2 minutes
 
 const initialState = {
   // we initialize the state by populating the bench with a shuffled collection of heroes
