@@ -6,54 +6,67 @@ export const COMICS = {
 export const HEROES = [
   {
     name: 'Veiðiloyvir og kvotur',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 0,
   },
   {
     name: 'Fiskiveiða',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 1,
   },
   {
     name: 'Landing av veiddum fiski',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 2,
   },
   {
     name: 'Goymsla av veiddum fiski',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 3,
   },
   {
     name: 'Flutningur av veiddum fiski',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 4,
   },
   {
     name: 'Brúkarar sum eta veiddan fisk',
-    comics: 'dc',
+    comics: 'Fiskivinna',
+    rank: 5,
   },
   {
     name: 'Alifóður',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 0,
   },
   {
     name: 'Aling',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 1,
   },
   {
     name: 'Landing av alifiski',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 2,
   },
   {
     name: 'Kryvjing og slátur',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 3,
   },
   {
     name: 'Gagnnýtsla av hjávørum',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 4,
   },
   {
     name: 'Flutningur av alifiski',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 5,
   },
   {
     name: 'Brúkarar sum eta alifisk',
-    comics: 'marvel',
+    comics: 'Alivinna',
+    rank: 6,
   },
 ];
