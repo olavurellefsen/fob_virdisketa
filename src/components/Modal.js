@@ -20,15 +20,13 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
 
   useEffect(() => {
     const doInsertFobGame = async (groups, timeLeft) => {
-      console.log(getTotalScore(groups, timeLeft))
       try {
-        const new_fob_game = await insertFobGame({
+        await insertFobGame({
           variables: {
             points: getTotalScore(groups, timeLeft),
             user_id: 'b3c9d557-5259-42c0-a171-f41eee95af35',
           },
         })
-        console.log('game logged', new_fob_game)
       } catch (e) {
         console.log('error', e)
       }

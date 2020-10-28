@@ -33,14 +33,6 @@ function calculateScore(groupedHeroes, comics) {
     const maxPoint = HEROES.length
     const heroIndex = correctOrder.findIndex((hero) => hero.rank === rank)
     const penalty = heroIndex >= 0 ? Math.abs(index - heroIndex) : maxPoint
-    console.log({
-      name,
-      rank,
-      heroIndex,
-      maxPoint,
-      penalty,
-      points: maxPoint - penalty,
-    })
     return score + (maxPoint - penalty)
   }, 0)
 }
