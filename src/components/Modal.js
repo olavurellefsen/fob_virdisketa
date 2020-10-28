@@ -5,8 +5,8 @@ import { useMutation } from '@apollo/client'
 import { useAuth0 } from '@auth0/auth0-react'
 
 const INSERT_FOB_GAME = gql`
-  mutation InsertFobGame($points: numeric!, $user_id: uuid!) {
-    insert_fob_game(objects: { points: $points, user_id: $user_id }) {
+  mutation InsertFobGame($points: numeric!, $email: String!) {
+    insert_fob_game(objects: { points: $points, email: $email }) {
       returning {
         id
       }
@@ -16,7 +16,7 @@ const INSERT_FOB_GAME = gql`
 
 const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
   const [insertFobGame] = useMutation(INSERT_FOB_GAME)
-  const { isAuthenticated } = useAuth0()
+  const { isAuthenticated, user } = useAuth0()
 
   useEffect(() => {
     const doInsertFobGame = async (groups, timeLeft) => {
@@ -24,17 +24,17 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
         await insertFobGame({
           variables: {
             points: getTotalScore(groups, timeLeft),
-            user_id: 'b3c9d557-5259-42c0-a171-f41eee95af35',
+            email: user.email,
           },
         })
       } catch (e) {
         console.log('error', e)
       }
     }
-    if (isAuthenticated && gameState !== GAME_STATE.READY) {
+    if (isAuthenticated && gameState !== GAME_STATE.READY && user) {
       doInsertFobGame(groups, timeLeft)
     }
-  }, [gameState, isAuthenticated])
+  }, [gameState, isAuthenticated, user])
 
   return (
     <div className="modal modal-sm active">
