@@ -1,9 +1,7 @@
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
-
 import { HEROES, COMICS } from './custom/data';
 import { shuffle, getTimeLeft, move, GAME_STATE } from './custom/utils';
-
 import Modal from './components/Modal';
 import Header from './components/Header';
 import Dropzone from './components/Dropzone';
