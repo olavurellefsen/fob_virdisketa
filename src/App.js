@@ -6,6 +6,7 @@ import Modal from './components/Modal';
 import Header from './components/Header';
 import Dropzone from './components/Dropzone';
 import Footer from './components/Footer';
+import Highscore from './components/Highscore';
 
 const GAME_DURATION = 1000 * 60 * 2; // 2 minutes
 
@@ -90,6 +91,7 @@ class App extends React.Component {
         )}
         {(this.state.gameState === GAME_STATE.PLAYING ||
           this.state.gameState === GAME_STATE.DONE) && (
+            <>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <div className="container">
               <div className="columns">
@@ -107,6 +109,8 @@ class App extends React.Component {
               </div>
             </div>
           </DragDropContext>
+          <Highscore />
+          </>
         )}
         <Footer />
       </>
