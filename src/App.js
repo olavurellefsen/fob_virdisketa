@@ -100,7 +100,7 @@ class App extends React.Component {
                   heroes={this.state[COMICS.MARVEL]}
                   isDropDisabled={isDropDisabled}
                 />
-                <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} />
+                <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame}/>
                 <Dropzone
                   id={COMICS.DC}
                   heroes={this.state[COMICS.DC]}
