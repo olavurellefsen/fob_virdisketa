@@ -16,7 +16,7 @@ const INSERT_FOB_GAME = gql`
 
 const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
   const [insertFobGame] = useMutation(INSERT_FOB_GAME)
-  const { isAuthenticated, user } = useAuth0()
+  const { isAuthenticated, user, loginWithRedirect } = useAuth0()
 
   useEffect(() => {
     const doInsertFobGame = async (groups, timeLeft) => {
@@ -52,6 +52,15 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
           </div>
         </div>
         <div className="modal-footer">
+          {!isAuthenticated && gameState === GAME_STATE.READY && (
+            <button
+              className="btn btn-default"
+              onClick={loginWithRedirect}
+              style={{ marginRight: '20px' }}
+            >
+              Logga inn
+            </button>
+          )}
           <button
             className="btn btn-primary"
             onClick={gameState === GAME_STATE.READY ? startGame : resetGame}
