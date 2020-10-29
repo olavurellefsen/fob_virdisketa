@@ -23,14 +23,15 @@ const LoginLogout = () => {
       <button
         className="btn btn-default"
         onClick={() => logout({ returnTo: window.location.origin })}
+        style={{ marginRight: '20px' }}
       >
-        Log out {user.name}
+        Logga {user.email} út
       </button>
     )
   } else {
     return (
-      <button className="btn btn-default" onClick={loginWithRedirect}>
-        Log in
+      <button className="btn btn-default" onClick={loginWithRedirect} style={{ marginRight: '20px' }}>
+        Logga inn
       </button>
     )
   }
