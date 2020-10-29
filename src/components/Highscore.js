@@ -35,10 +35,10 @@ const HighScore = () => {
       <div style={{padding: '20px'}}>
         <h3>Higartil hevur tú fingið:</h3>
         {scores &&
-          scores.fob_game.map((score) => {
+          scores.fob_game.map((score, index) => {
             const timestamp = new Date(score.updated_at.replace(' ', 'T'))
             return (
-              <div>
+              <div key={index}>
                 {score.points} stig ({timestamp.toLocaleTimeString()})
               </div>
             )
