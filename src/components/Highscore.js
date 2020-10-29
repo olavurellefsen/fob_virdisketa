@@ -19,7 +19,6 @@ const HighScore = () => {
   const { isAuthenticated, user } = useAuth0()
   const [email, setEmail] = useState('')
   useEffect(() => {
-    console.log(user)
     if (user) {
       setEmail(user.email)
     }
