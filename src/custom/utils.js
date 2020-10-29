@@ -31,7 +31,7 @@ function calculateScore(groupedHeroes, comics) {
 
   return groupedHeroes.reduce((score, { name, rank }, index) => {
     const maxPoint = HEROES.length
-    const heroIndex = correctOrder.findIndex((hero) => hero.rank === rank)
+    const heroIndex = correctOrder.findIndex((hero) => hero.rank === rank && hero.name === name)
     const penalty = heroIndex >= 0 ? Math.abs(index - heroIndex) : maxPoint
     return score + (maxPoint - penalty)
   }, 0)
@@ -42,7 +42,7 @@ export function getTotalScore(groups, timeLeft) {
     (sum, comicsName) => sum + calculateScore(groups[comicsName], comicsName),
     0
   )
-  const timeBonus = getSeconds(timeLeft)
+  const timeBonus = Math.round(getSeconds(timeLeft)/10,0)
   return gameScore ? gameScore + timeBonus : 0
 }
 
