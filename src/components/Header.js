@@ -11,7 +11,7 @@ const Header = ({ timeLeft, gameState, endGame }) => (
         <section className="navbar-center">
           <LoginLogout />
           <button className="btn btn-default" onClick={endGame}>
-            Enda spælið
+            {gameState === GAME_STATE.PLAYING ? "Eftirmeting" : "Enda spælið"}
           </button>
         </section>
       </>

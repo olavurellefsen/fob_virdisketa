@@ -55,10 +55,16 @@ class App extends React.Component {
     if (this.timer) {
       clearInterval(this.timer);
     }
-
-    this.setState({
-      gameState: this.gameState === GAME_STATE.REVIEW ? GAME_STATE.DONE : GAME_STATE.REVIEW
-    });
+    console.log("gameState", this.state.gameState)
+    if (this.state.gameState === GAME_STATE.PLAYING){
+      this.setState({
+        gameState: GAME_STATE.REVIEW
+      });
+    } else {
+      this.setState({
+        gameState: GAME_STATE.DONE
+      });
+    }
   };
 
   resetGame = () => {
@@ -78,6 +84,7 @@ class App extends React.Component {
   render() {
     const { gameState, timeLeft, Óflokkað, ...groups } = this.state;
     const isDropDisabled = gameState === GAME_STATE.DONE || gameState === GAME_STATE.REVIEW;
+    console.log("end", gameState)
 
     return (
       <>
