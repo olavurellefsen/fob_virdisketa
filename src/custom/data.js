@@ -111,7 +111,7 @@ export const HEROES = [
     description: ""
   },
   {
-    name: "Ullaframleiðsa",
+    name: "Ullframleiðsa",
     comics: "Óflokkað",
     rank: 0,
     color: "",
