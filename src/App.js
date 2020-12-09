@@ -55,7 +55,6 @@ class App extends React.Component {
     if (this.timer) {
       clearInterval(this.timer);
     }
-    console.log("gameState", this.state.gameState)
     if (this.state.gameState === GAME_STATE.PLAYING){
       this.setState({
         gameState: GAME_STATE.REVIEW
@@ -84,7 +83,6 @@ class App extends React.Component {
   render() {
     const { gameState, timeLeft, Óflokkað, ...groups } = this.state;
     const isDropDisabled = gameState === GAME_STATE.DONE || gameState === GAME_STATE.REVIEW;
-    console.log("end", gameState)
 
     return (
       <>
