@@ -5,7 +5,7 @@ import { GAME_STATE, getSeconds } from '../custom/utils';
 
 const Header = ({ timeLeft, gameState, endGame }) => (
   <header className="navbar">
-    {gameState === GAME_STATE.PLAYING && (
+    {(gameState === GAME_STATE.PLAYING || gameState === GAME_STATE.REVIEW) && (
       <>
         <section className="navbar-center text-error">{getSeconds(timeLeft)} sekundir eftir</section>
         <section className="navbar-center">

@@ -3,7 +3,6 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const LoginLogout = () => {
   const {
-    isLoading,
     isAuthenticated,
     error,
     user,
@@ -11,9 +10,7 @@ const LoginLogout = () => {
     logout,
   } = useAuth0()
 
-  if (isLoading) {
-    console.log("Loading...")
-  }
+
   if (error) {
     console.log(error.message)
   }

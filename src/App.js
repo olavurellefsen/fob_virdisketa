@@ -7,8 +7,10 @@ import Header from './components/Header';
 import Dropzone from './components/Dropzone';
 import Footer from './components/Footer';
 import Highscore from './components/Highscore';
+import styled from 'styled-components';
+import { media } from './utils/mediaTemplate'
 
-const GAME_DURATION = 1000 * 60 * 2; // 2 minutes
+const GAME_DURATION = 4000 * 60 * 2; // 2 minutes
 
 const initialState = {
   // we initialize the state by populating the bench with a shuffled collection of heroes
@@ -55,7 +57,7 @@ class App extends React.Component {
     }
 
     this.setState({
-      gameState: GAME_STATE.DONE,
+      gameState: this.gameState === GAME_STATE.REVIEW ? GAME_STATE.DONE : GAME_STATE.REVIEW
     });
   };
 
@@ -75,12 +77,12 @@ class App extends React.Component {
 
   render() {
     const { gameState, timeLeft, Óflokkað, ...groups } = this.state;
-    const isDropDisabled = gameState === GAME_STATE.DONE;
+    const isDropDisabled = gameState === GAME_STATE.DONE || gameState === GAME_STATE.REVIEW;
 
     return (
       <>
         <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
-        {this.state.gameState !== GAME_STATE.PLAYING && (
+        {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
             startGame={this.startGame}
             resetGame={this.resetGame}
@@ -90,28 +92,34 @@ class App extends React.Component {
           />
         )}
         {(this.state.gameState === GAME_STATE.PLAYING ||
+          this.state.gameState === GAME_STATE.REVIEW ||
           this.state.gameState === GAME_STATE.DONE) && (
             <>
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <div className="container">
-              <div className="columns">
-                <Dropzone
-                  id={COMICS.MARVEL}
-                  heroes={this.state[COMICS.MARVEL]}
-                  isDropDisabled={isDropDisabled}
-                />
-                <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame}/>
-                <Dropzone
-                  id={COMICS.DC}
-                  heroes={this.state[COMICS.DC]}
-                  isDropDisabled={isDropDisabled}
-                />
-              </div>
-            </div>
-          </DragDropContext>
-          <Highscore />
-          </>
-        )}
+              <DragDropContext onDragEnd={this.onDragEnd}>
+                <FlexContainer>
+                  <FlexColumn >
+                    <Dropzone
+                      id={COMICS.MARVEL}
+                      color="olive"
+                      heroes={this.state[COMICS.MARVEL]}
+                      isDropDisabled={isDropDisabled}
+                      gameState={gameState}
+
+                    />
+                    <Dropzone id="Óflokkað" heroes={Óflokkað} isDropDisabled={isDropDisabled} endGame={this.endGame} gameState={gameState} />
+                    <Dropzone
+                      id={COMICS.DC}
+                      color="steelblue"
+                      heroes={this.state[COMICS.DC]}
+                      isDropDisabled={isDropDisabled}
+                      gameState={gameState}
+                    />
+                  </FlexColumn>
+                </FlexContainer>
+              </DragDropContext>
+              <Highscore />
+            </>
+          )}
         <Footer />
       </>
     );
@@ -123,5 +131,23 @@ class App extends React.Component {
     }
   }
 }
+
+const FlexContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: stretch;
+`
+
+const FlexColumn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  ${media.desktop3`
+    flex-direction: column;
+  `}
+`
 
 export default App;

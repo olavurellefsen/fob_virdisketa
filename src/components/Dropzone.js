@@ -1,59 +1,95 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
+import styled from 'styled-components'
+import PopupHero from './PopupHero'
 
-const Dropzone = ({ isDropDisabled, heroes, id, endGame }) => (
-  <div className="column col-4">
-    <div className="h3">{id}</div>
-    {endGame && heroes.length === 0 && (
-      <button className="btn btn-default" onClick={endGame}>
-        Enda spælið
-      </button>
-    )}
-    <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
+const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => {
+  const [selectedHero, setSelectedHero] = useState("")
+
+  return (
+    <HeroContainerStyle>
+      <div className="h3" style={{ marginTop: "20px", border: `${gameState === "review" ? `solid 5px ${color}` : ""}` }}>{id}</div>
+      {endGame && heroes.length === 0 && (
+        <button className="btn btn-default" onClick={endGame}>
+          Enda spælið
+        </button>
+      )}
+      <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
+        {(provided) => {
+          return (
+            <div
+              className="menu hero-list"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {heroes.map(({ name, color, rank, description }, index) => (
+                <Hero key={name} name={name} description={description} index={index}
+                  color={color} gameState={gameState} rank={rank}
+                  selectedHero={selectedHero}
+                  setSelectedHero={setSelectedHero}
+                />
+              ))}
+              {provided.placeholder}
+            </div>
+          )
+        }}
+      </Droppable>
+    </HeroContainerStyle>
+  )
+}
+const Hero = ({ name, color, rank, description, index, gameState,
+  selectedHero, setSelectedHero }) => {
+  return (
+    <Draggable key={index} draggableId={name} index={index}>
       {(provided) => {
         return (
-          <div
-            className="menu hero-list"
-            {...provided.droppableProps}
+          <HeroStyle
+            review={gameState === "review"}
+            color={color}
+            className="menu-item tile tile-centered center-column"
             ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
           >
-            {heroes.map(({ name }, index) => (
-              <Hero key={name} name={name} index={index} />
-            ))}
-            {provided.placeholder}
-          </div>
+            <figure
+              style={{ backgroundColor: 'transparent' }}
+              className="avatar tile-icon"
+            >
+              <img
+                src={`./hero_icons/${name
+                  .toLowerCase()
+                  .replaceAll(' ', '-')}.png`}
+                alt={name}
+              />
+            </figure>
+            <div onClick={() => {
+              setSelectedHero(name)
+            }} title={description} className="tile-content">{gameState === "review" ? `${rank}. ${name}` : name}</div>
+            {gameState === "review" &&
+              <PopupHero name={name} rank={rank} description={description}
+                selectedHero={selectedHero} setSelectedHero={setSelectedHero}
+              />}
+          </HeroStyle>
         )
       }}
-    </Droppable>
-  </div>
-)
+    </Draggable>
+  )
+}
 
-const Hero = ({ name, index }) => (
-  <Draggable key={index} draggableId={name} index={index}>
-    {(provided) => {
-      return (
-        <div
-          className="menu-item tile tile-centered"
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-        >
-          <figure
-            style={{ backgroundColor: 'transparent' }}
-            className="avatar tile-icon"
-          >
-            <img
-              src={`./hero_icons/${name
-                .toLowerCase()
-                .replaceAll(' ', '-')}.png`}
-              alt={name}
-            />
-          </figure>
-          <div className="tile-content">{name}</div>
-        </div>
-      )
-    }}
-  </Draggable>
-)
+const HeroContainerStyle = styled.div`
+  max-width: 500px;
+  min-width: 290px;
+`
+const HeroStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   ${({ review, color }) =>
+    review && color &&
+    `
+    background-color: ${color};
+    color: white;
 
+    `}
+`
 export default Dropzone
