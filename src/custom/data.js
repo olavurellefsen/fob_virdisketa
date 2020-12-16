@@ -12,7 +12,7 @@ export const HEROES = [
     description: "Veðirloyvir loyvir skipum at veiða fisk. Kvotur avmarka, hvussu nógv kann fiskast"
   },
   {
-    name: 'Virking(av veiddum fiski)',
+    name: 'Virking av veiddum fiski',
     comics: 'Fiskivinna',
     rank: 0,
     color: "steelblue",

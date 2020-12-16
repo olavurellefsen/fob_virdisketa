@@ -5,7 +5,6 @@ import PopupHero from './PopupHero'
 
 const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => {
   const [selectedHero, setSelectedHero] = useState("")
-
   return (
     <HeroContainerStyle>
       <div className="h3" style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>

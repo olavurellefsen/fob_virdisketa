@@ -1,6 +1,5 @@
 import React from 'react';
 import LoginLogout from './LoginLogout'
-
 import { GAME_STATE, getSeconds } from '../custom/utils';
 
 const Header = ({ timeLeft, gameState, endGame }) => (
