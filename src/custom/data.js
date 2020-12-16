@@ -87,34 +87,34 @@ export const HEROES = [
     comics: 'Alivinna',
     rank: 4,
     color: "olive",
-    description: ""
+    description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraðir vøru. Eitt dømi umtað alivinnuni er skarn frá fiski, sum eitt nú verður brúkt í biogassverkinum."
   },
   {
     name: 'Flutningur av alifiski',
     comics: 'Alivinna',
     rank: 5,
     color: "olive",
-    description: ""
+    description: "Fluntingur av alifiski er, tá ið fyritøkan tekur alifiskin upp úr aliringinum, og flytir hann til t.d. eitt kryvjingarvirkið."
   },
   {
     name: 'Brúkarar sum eta alifisk',
     comics: 'Alivinna',
     rank: 6,
     color: "olive",
-    description: ""
+    description: "Brúkarar sum eta alifisk eru vit øll, ið eta alifisk."
   },
   {
     name: "Fletting",
     comics: "Óflokkað",
     rank: 0,
     color: "",
-    description: ""
+    description: "At fletta er ikki partur av fiski- ella alivinnu, men nakað ein ger við t.d. seyð, neyt og kóp."
   },
   {
     name: "Ullframleiðsa",
     comics: "Óflokkað",
     rank: 0,
     color: "",
-    description: ""
+    description: "Ullframleiðsa er hvørki tendg at fiski- ella alivinnu, men er ein partur av landbúnaði."
   }
 ];
