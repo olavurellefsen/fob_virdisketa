@@ -103,18 +103,4 @@ export const HEROES = [
     color: "olive",
     description: "Brúkarar sum eta alifisk eru vit øll, ið eta alifisk."
   },
-  {
-    name: "Fletting",
-    comics: "Óflokkað",
-    rank: 0,
-    color: "",
-    description: "At fletta er ikki partur av fiski- ella alivinnu, men nakað ein ger við t.d. seyð, neyt og kóp."
-  },
-  {
-    name: "Ullframleiðsa",
-    comics: "Óflokkað",
-    rank: 0,
-    color: "",
-    description: "Ullframleiðsa er hvørki tendg at fiski- ella alivinnu, men er ein partur av landbúnaði."
-  }
 ];
