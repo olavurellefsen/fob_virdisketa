@@ -100,6 +100,7 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.REVIEW ||
           this.state.gameState === GAME_STATE.DONE) && (
             <>
+            <TitleStyle>Hála í kassarnar til vinstru ella høgru</TitleStyle>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <FlexContainer>
                   <FlexColumn >
@@ -155,4 +156,8 @@ const FlexColumn = styled.div`
   `}
 `
 
+const TitleStyle = styled.h1`
+  text-align: center;
+  font-size: 1.2rem;
+`
 export default App;

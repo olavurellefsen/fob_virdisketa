@@ -56,7 +56,7 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => {
           <div className="content h6">
             {' '}
             {gameState === GAME_STATE.READY
-              ? `virksemið til virðisketuna hjá antin fiskivinnuni ella alivinnuni`
+              ? `Virksemið til virðisketuna hjá antin fiskivinnuni ella alivinnuni`
               : `Tú fekk: ${totalScore} stig, har ið tíðsbonusið taldi ${totalScore > 0 ? timeBonus : 0} stig. Tú fekst ${score} fyri at seta virksemini í tilhoyrandi vinnu og í røttu raðfylgju.`}
           </div>
         </div>
