@@ -3,8 +3,6 @@ import { Droppable, Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components'
 import PopupHero from './PopupHero'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GiFishingBoat,GiHarborDock } from 'react-icons/gi'
-
 
 
 const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => {
@@ -17,7 +15,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
           Enda spælið
         </button>
       )}
-      <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
+      <Droppable droppableId={id} isDropDisabled={isDropDisabled} style={{ backgroundColor: "transparent"}}>
         {(provided) => {
           return (
             <div
@@ -43,7 +41,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
 const Hero = ({ name, icons, color, rank, description, index, gameState,
   selectedHero, setSelectedHero }) => {
   return (
-    <Draggable key={index} draggableId={name} index={index}>
+    <Draggable key={index} draggableId={name} index={index} style={{ backgroundColor: "transparent"}}>
       {(provided) => {
         return (
           <HeroStyle
@@ -90,6 +88,7 @@ const FigureStyle = styled.div`
   display:flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 `
 const IconStyle = styled.div`
   flex-direction: row;
@@ -104,11 +103,17 @@ const LabelStyle = styled.div`
 const HeroContainerStyle = styled.div`
   max-width: 500px;
   min-width: 290px;
+  padding:10px;
+  background-color: white;
+  border-radius: 20px;
+  margin:2px;
+  opacity: 0.8;
 `
 const HeroStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
    ${({ review, color }) =>
     review && color &&
     `
