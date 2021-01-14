@@ -6,7 +6,11 @@ const Header = ({ timeLeft, gameState, endGame }) => (
   <header className="navbar">
     {(gameState === GAME_STATE.PLAYING || gameState === GAME_STATE.REVIEW) && (
       <>
-        <section className="navbar-center text-error">{getSeconds(timeLeft)} sekundir eftir</section>
+        <section style={{backgroundColor:'white', 
+                          opacity:0.8,
+                          padding: '5px',
+                          borderRadius: '10px'}} 
+        className="navbar-center text-error">{getSeconds(timeLeft)} sekundir eftir</section>
         <section className="navbar-center">
           <LoginLogout />
           <button className="btn btn-default" onClick={endGame}>

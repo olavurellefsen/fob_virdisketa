@@ -86,6 +86,7 @@ class App extends React.Component {
 
     return (
       <>
+      <Background src='/background/IMG_1061.jpg'/>
         <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
         {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
@@ -100,7 +101,7 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.REVIEW ||
           this.state.gameState === GAME_STATE.DONE) && (
             <>
-            <TitleStyle>Hála í kassarnar til vinstru ella høgru</TitleStyle>
+            <TitleStyle>Hála kassarnar til vinstru ella høgru</TitleStyle>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <FlexContainer>
                   <FlexColumn >
@@ -138,6 +139,14 @@ class App extends React.Component {
   }
 }
 
+const Background = styled.img`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index:-1;
+`
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
@@ -159,5 +168,6 @@ const FlexColumn = styled.div`
 const TitleStyle = styled.h1`
   text-align: center;
   font-size: 1.2rem;
+  color:white;
 `
 export default App;
