@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components'
 import PopupHero from './PopupHero'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { GiFishingBoat,GiHarborDock } from 'react-icons/gi'
+
+
 
 const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => {
   const [selectedHero, setSelectedHero] = useState("")
@@ -21,8 +25,8 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {heroes.map(({ name, color, rank, description }, index) => (
-                <Hero key={name} name={name} description={description} index={index}
+              {heroes.map(({ name, color, rank, icons, description }, index) => (
+                <Hero key={name} name={name} icons={icons} description={description} index={index}
                   color={color} gameState={gameState} rank={rank}
                   selectedHero={selectedHero}
                   setSelectedHero={setSelectedHero}
@@ -36,7 +40,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
     </HeroContainerStyle>
   )
 }
-const Hero = ({ name, color, rank, description, index, gameState,
+const Hero = ({ name, icons, color, rank, description, index, gameState,
   selectedHero, setSelectedHero }) => {
   return (
     <Draggable key={index} draggableId={name} index={index}>
@@ -50,20 +54,26 @@ const Hero = ({ name, color, rank, description, index, gameState,
             {...provided.draggableProps}
             {...provided.dragHandleProps}
           >
-            <figure
+            <FigureStyle
               style={{ backgroundColor: 'transparent' }}
               className="avatar tile-icon"
             >
-              <img
+            <IconStyle>
+            {icons.map(i => (
+              <FontAwesomeIcon icon={i} style={{ color: `black` }} />
+            ))}
+            </IconStyle>
+            
+              {/* <img
                 src={`./hero_icons/${name
                   .toLowerCase()
                   .replaceAll(' ', '-')}.png`}
                 alt={name}
-              />
-            </figure>
-            <div onClick={() => {
+              /> */}
+            </FigureStyle>
+            <LabelStyle onClick={() => {
               setSelectedHero(name)
-            }} title={description} className="tile-content">{gameState === "review" ? `${rank}. ${name}` : name}</div>
+            }} title={description} className="tile-content">{gameState === "review" ? `${rank}. ${name}` : name}</LabelStyle>
             {gameState === "review" &&
               <PopupHero name={name} rank={rank} description={description}
                 selectedHero={selectedHero} setSelectedHero={setSelectedHero}
@@ -75,6 +85,22 @@ const Hero = ({ name, color, rank, description, index, gameState,
   )
 }
 
+const FigureStyle = styled.div`
+  flex-direction: row;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+`
+const IconStyle = styled.div`
+  flex-direction: row;
+  display:flex;
+  align-items: center;
+`
+const LabelStyle = styled.div`
+  flex-direction: row;
+  display:flex;
+  align-items: center;
+`
 const HeroContainerStyle = styled.div`
   max-width: 500px;
   min-width: 290px;
