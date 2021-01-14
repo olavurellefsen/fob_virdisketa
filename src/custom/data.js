@@ -19,7 +19,7 @@ export const HEROES = [
   {
     name: 'Virking av veiddum fiski',
     comics: 'Fiskivinna',
-    rank: 0,
+    rank: 5,
     icons:[faIndustry],
     color: "steelblue",
     description: ""
@@ -59,7 +59,7 @@ export const HEROES = [
   {
     name: 'Brúkarar sum eta veiddan fisk',
     comics: 'Fiskivinna',
-    rank: 5,
+    rank: 6,
     icons:[faUtensils],
     color: "steelblue",
     description: ""
