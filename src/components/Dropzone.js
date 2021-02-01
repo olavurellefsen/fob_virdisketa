@@ -10,11 +10,6 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
   return (
     <HeroContainerStyle>
       <div className="h3" style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>
-      {endGame && heroes.length === 0 && (
-        <button className="btn btn-default" onClick={endGame}>
-          Enda spælið
-        </button>
-      )}
       <Droppable droppableId={id} isDropDisabled={isDropDisabled} style={{ backgroundColor: "transparent"}}>
         {(provided) => {
           return (
@@ -61,7 +56,7 @@ const Hero = ({ name, icons, color, rank, description, index, gameState,
               <FontAwesomeIcon icon={i} style={{ color: `black` }} />
             ))}
             </IconStyle>
-            
+
               {/* <img
                 src={`./hero_icons/${name
                   .toLowerCase()
