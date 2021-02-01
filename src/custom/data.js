@@ -1,5 +1,5 @@
 
-import {faShip, faIndustry, faTruck, faFish, faFileInvoice, faUtensils, faWarehouse, faRecycle,faRing} from '@fortawesome/free-solid-svg-icons'
+import { faShip, faIndustry, faTruck, faFish, faFileInvoice, faUtensils, faWarehouse, faRecycle, faRing, faStamp } from '@fortawesome/free-solid-svg-icons'
 
 
 export const COMICS = {
@@ -12,7 +12,7 @@ export const HEROES = [
     name: 'Veiðiloyvir og kvotur',
     comics: 'Fiskivinna',
     rank: 0,
-    icons:[faFileInvoice],
+    icons: [faFileInvoice],
     color: "steelblue",
     description: "Veðirloyvir loyvir skipum at veiða fisk. Kvotur avmarka, hvussu nógv kann fiskast"
   },
@@ -20,7 +20,7 @@ export const HEROES = [
     name: 'Virking av veiddum fiski',
     comics: 'Fiskivinna',
     rank: 5,
-    icons:[faIndustry],
+    icons: [faIndustry],
     color: "steelblue",
     description: ""
   },
@@ -44,7 +44,7 @@ export const HEROES = [
     name: 'Goymsla av veiddum fiski',
     comics: 'Fiskivinna',
     rank: 3,
-    icons:[faWarehouse],
+    icons: [faWarehouse],
     color: "steelblue",
     description: ""
   },
@@ -52,7 +52,7 @@ export const HEROES = [
     name: 'Flutningur av veiddum fiski',
     comics: 'Fiskivinna',
     rank: 4,
-    icons:[faTruck],
+    icons: [faTruck],
     color: "steelblue",
     description: ""
   },
@@ -60,7 +60,7 @@ export const HEROES = [
     name: 'Brúkarar sum eta veiddan fisk',
     comics: 'Fiskivinna',
     rank: 6,
-    icons:[faUtensils],
+    icons: [faUtensils],
     color: "steelblue",
     description: ""
 
@@ -69,7 +69,7 @@ export const HEROES = [
     name: 'Alifóður',
     comics: 'Alivinna',
     rank: 0,
-    icons:[faFish],
+    icons: [faFish],
     color: "olive",
     description: ""
   },
@@ -77,7 +77,7 @@ export const HEROES = [
     name: 'Aling',
     comics: 'Alivinna',
     rank: 1,
-    icons:[faRing],
+    icons: [faRing],
     color: "olive",
     description: ""
   },
@@ -85,7 +85,7 @@ export const HEROES = [
     name: 'Landing av alifiski',
     comics: 'Alivinna',
     rank: 2,
-    icons:[faShip, faIndustry],
+    icons: [faShip, faIndustry],
     color: "olive",
     description: ""
   },
@@ -93,7 +93,7 @@ export const HEROES = [
     name: 'Kryvjing og slátur',
     comics: 'Alivinna',
     rank: 3,
-    icons:[faIndustry],
+    icons: [faIndustry],
     color: "olive",
     description: ""
   },
@@ -101,15 +101,23 @@ export const HEROES = [
     name: 'Gagnnýtsla av hjávørum',
     comics: 'Alivinna',
     rank: 4,
-    icons:[faRecycle],
+    icons: [faRecycle, faIndustry],
     color: "olive",
-    description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraðir vøru. Eitt dømi umtað alivinnuni er skarn frá fiski, sum eitt nú verður brúkt í biogassverkinum."
+    description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraði vøru. Eitt dømi um í tað alivinnuni er skarn frá fiski, sum eitt nú verður brúkt í biogassverkinum."
+  },
+  {
+    name: 'Gagnnýtsla av hjávørum ',
+    comics: 'Fiskivinna',
+    rank: 4,
+    icons: [faRecycle, faShip],
+    color: "olive",
+    description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraði vøru."
   },
   {
     name: 'Flutningur av alifiski',
     comics: 'Alivinna',
     rank: 5,
-    icons:[faTruck],
+    icons: [faTruck],
     color: "olive",
     description: "Fluntingur av alifiski er, tá ið fyritøkan tekur alifiskin upp úr aliringinum, og flytir hann til t.d. eitt kryvjingarvirkið."
   },
@@ -117,8 +125,16 @@ export const HEROES = [
     name: 'Brúkarar sum eta alifisk',
     comics: 'Alivinna',
     rank: 6,
-    icons:[faUtensils],
+    icons: [faUtensils],
     color: "olive",
     description: "Brúkarar sum eta alifisk eru vit øll, ið eta alifisk."
+  },
+  {
+    name: 'Aliloyvi',
+    comics: 'Alivinna',
+    rank: 6,
+    icons: [faRing, faStamp],
+    color: "olive",
+    description: "Aliloyvið krevst fyri at kunna ala t.d. fisk og tara."
   },
 ];

@@ -101,7 +101,7 @@ class App extends React.Component {
           this.state.gameState === GAME_STATE.REVIEW ||
           this.state.gameState === GAME_STATE.DONE) && (
             <>
-            <TitleStyle>Hála kassarnar til vinstru ella høgru</TitleStyle>
+            <TitleStyle>Drag ymisku liðini í kassarnar og set í rætta raðfylgju.</TitleStyle>
               <DragDropContext onDragEnd={this.onDragEnd}>
                 <FlexContainer>
                   <FlexColumn >
