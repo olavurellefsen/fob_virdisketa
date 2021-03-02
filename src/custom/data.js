@@ -110,8 +110,8 @@ export const HEROES = [
     comics: 'Fiskivinna',
     rank: 4,
     icons: [faRecycle, faShip],
-    color: "olive",
-    description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraði vøru."
+    color: "steelblue",
+    description: "Hjávørir eru vørir, ið uppkoma í samband við framleiðsuna av einari aðraði vøru."
   },
   {
     name: 'Flutningur av alifiski',
@@ -124,7 +124,7 @@ export const HEROES = [
   {
     name: 'Brúkarar sum eta alifisk',
     comics: 'Alivinna',
-    rank: 6,
+    rank: 7,
     icons: [faUtensils],
     color: "olive",
     description: "Brúkarar sum eta alifisk eru vit øll, ið eta alifisk."
