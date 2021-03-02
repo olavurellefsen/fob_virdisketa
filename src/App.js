@@ -87,7 +87,7 @@ class App extends React.Component {
     return (
       <>
       <Background src='/background/IMG_1061.jpg'/>
-        <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
+        <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} isUngroupedEmtpy={Óflokkað.length === 0}/>
         {(this.state.gameState !== GAME_STATE.PLAYING && this.state.gameState !== GAME_STATE.REVIEW) && (
           <Modal
             startGame={this.startGame}
