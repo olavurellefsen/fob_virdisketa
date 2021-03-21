@@ -54,7 +54,7 @@ export function getGroupings(groups) {
     (sum, comicsName) => sum + getNumberOfGrouping(groups[comicsName], comicsName),
     0
   )
-  return `Tú fekst ${gameScore} bólkingar rættar út av ${maxPoint}`
+  return `Tú fekst ${gameScore} rætt út av ${maxPoint}`
 }
 
 
