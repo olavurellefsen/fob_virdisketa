@@ -68,7 +68,7 @@ export const HEROES = [
   {
     name: 'Alifóður',
     comics: 'Alivinna',
-    rank: 0,
+    rank: 2,
     icons: [faFish],
     color: "olive",
     description: ""
@@ -84,7 +84,7 @@ export const HEROES = [
   {
     name: 'Landing av alifiski',
     comics: 'Alivinna',
-    rank: 2,
+    rank: 3,
     icons: [faShip, faIndustry],
     color: "olive",
     description: ""
@@ -92,7 +92,7 @@ export const HEROES = [
   {
     name: 'Kryvjing og slátur',
     comics: 'Alivinna',
-    rank: 3,
+    rank: 4,
     icons: [faIndustry],
     color: "olive",
     description: ""
@@ -100,7 +100,7 @@ export const HEROES = [
   {
     name: 'Gagnnýtsla av hjávørum',
     comics: 'Alivinna',
-    rank: 4,
+    rank: 5,
     icons: [faRecycle, faIndustry],
     color: "olive",
     description: "Hjávørir eru vørir, ið uppkoa í samband við framleiðsuna av einari aðraði vøru. Eitt dømi um í tað alivinnuni er skarn frá fiski, sum eitt nú verður brúkt í biogassverkinum."
@@ -116,7 +116,7 @@ export const HEROES = [
   {
     name: 'Flutningur av alifiski',
     comics: 'Alivinna',
-    rank: 5,
+    rank: 6,
     icons: [faTruck],
     color: "olive",
     description: "Fluntingur av alifiski er, tá ið fyritøkan tekur alifiskin upp úr aliringinum, og flytir hann til t.d. eitt kryvjingarvirkið."
@@ -132,7 +132,7 @@ export const HEROES = [
   {
     name: 'Aliloyvi',
     comics: 'Alivinna',
-    rank: 6,
+    rank: 0,
     icons: [faRing, faStamp],
     color: "olive",
     description: "Aliloyvið krevst fyri at kunna ala t.d. fisk og tara."
