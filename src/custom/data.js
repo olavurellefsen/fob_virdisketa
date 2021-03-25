@@ -57,7 +57,7 @@ export const HEROES = [
     description: ""
   },
   {
-    name: 'Brúkarar sum eta veiddan fisk',
+    name: 'Brúkarar, sum eta veiddan fisk',
     comics: 'Fiskivinna',
     rank: 7,
     icons: [faUtensils],
@@ -82,7 +82,7 @@ export const HEROES = [
     description: ""
   },
   {
-    name: 'Landing av alifiski',
+    name: 'Tøka av alifiski',
     comics: 'Alivinna',
     rank: 3,
     icons: [faShip, faIndustry],
@@ -90,7 +90,7 @@ export const HEROES = [
     description: ""
   },
   {
-    name: 'Kryvjing og slátur',
+    name: 'Kryvjing og slátur av alifiski',
     comics: 'Alivinna',
     rank: 4,
     icons: [faIndustry],
