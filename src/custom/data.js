@@ -19,7 +19,7 @@ export const HEROES = [
   {
     name: 'Virking av veiddum fiski',
     comics: 'Fiskivinna',
-    rank: 5,
+    rank: 3,
     icons: [faIndustry],
     color: "steelblue",
     description: ""
@@ -43,7 +43,7 @@ export const HEROES = [
   {
     name: 'Goymsla av veiddum fiski',
     comics: 'Fiskivinna',
-    rank: 3,
+    rank: 5,
     icons: [faWarehouse],
     color: "steelblue",
     description: ""
@@ -68,7 +68,7 @@ export const HEROES = [
   {
     name: 'Alifóður',
     comics: 'Alivinna',
-    rank: 2,
+    rank: 1,
     icons: [faFish],
     color: "olive",
     description: ""
@@ -76,7 +76,7 @@ export const HEROES = [
   {
     name: 'Aling',
     comics: 'Alivinna',
-    rank: 1,
+    rank: 2,
     icons: [faRing],
     color: "olive",
     description: ""
