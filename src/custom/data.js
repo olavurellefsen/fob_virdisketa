@@ -122,12 +122,12 @@ export const HEROES = [
     description: "Fluntingur av alifiski er, tá ið fyritøkan tekur alifiskin upp úr aliringinum, og flytir hann til t.d. eitt kryvjingarvirkið."
   },
   {
-    name: 'Brúkarar sum eta alifisk',
+    name: 'Brúkarar, sum eta alifisk',
     comics: 'Alivinna',
     rank: 7,
     icons: [faUtensils],
     color: "olive",
-    description: "Brúkarar sum eta alifisk eru vit øll, ið eta alifisk."
+    description: "Brúkarar, sum eta alifisk, eru vit øll, ið eta alifisk."
   },
   {
     name: 'Aliloyvi',
