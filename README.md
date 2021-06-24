@@ -1,1 +1,1 @@
-Virðisketuspæl til verkætlan um føðslu og burðardygd
+Virðisketuuppgáva til verkætlan um føðslu og burðardygd
