@@ -10,7 +10,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
   return (
     <HeroContainerStyle>
       <div className="h3" style={{ marginTop: "20px", borderBottom: `${gameState === "review" ? `10px ${color} solid` : ""}` }}>{id}</div>
-      <Droppable droppableId={id} isDropDisabled={isDropDisabled} style={{ backgroundColor: "transparent"}}>
+      <Droppable droppableId={id} isDropDisabled={isDropDisabled} style={{ backgroundColor: "transparent", height: "670px" }}>
         {(provided) => {
           return (
             <div
@@ -36,7 +36,7 @@ const Dropzone = ({ isDropDisabled, heroes, id, endGame, gameState, color }) => 
 const Hero = ({ name, icons, color, rank, description, index, gameState,
   selectedHero, setSelectedHero }) => {
   return (
-    <Draggable key={index} draggableId={name} index={index} style={{ backgroundColor: "transparent"}}>
+    <Draggable key={index} draggableId={name} index={index} style={{ backgroundColor: "transparent" }}>
       {(provided) => {
         return (
           <HeroStyle
@@ -51,11 +51,11 @@ const Hero = ({ name, icons, color, rank, description, index, gameState,
               style={{ backgroundColor: 'transparent' }}
               className="avatar tile-icon"
             >
-            <IconStyle>
-            {icons.map(i => (
-              <FontAwesomeIcon icon={i} style={{ color: `black` }} />
-            ))}
-            </IconStyle>
+              <IconStyle>
+                {icons.map(i => (
+                  <FontAwesomeIcon icon={i} style={{ color: `black` }} />
+                ))}
+              </IconStyle>
 
               {/* <img
                 src={`./hero_icons/${name
@@ -98,6 +98,7 @@ const LabelStyle = styled.div`
 const HeroContainerStyle = styled.div`
   max-width: 500px;
   min-width: 290px;
+  height: 715px;
   padding:10px;
   background-color: white;
   border-radius: 20px;
